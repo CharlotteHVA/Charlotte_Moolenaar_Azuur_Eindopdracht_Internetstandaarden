@@ -1,0 +1,797 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* 
+ * Structuur en notities 
+ * - Headlines en paragrafen zijn bovenaan geplaatst.
+ * - Afwijkende stijlen voor h1, h2 en paragrafen zijn gedefinieerd.
+ * - Compressie is toegepast op de afbeeldingen voor snellere laadtijden.
+ * - Alle overbodige code en afbeeldingen zijn verwijderd om de prestaties te verbeteren.
+ */
+
+body {
+    background-color: #A70118;
+    color: #F9F9F9;
+    font-family: "Montserrat", sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Header styling */
+
+header {
+    background-color: #040404;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    height: 8vh;
+    padding: 1em 3em;
+}
+
+/* Logo-sectie in de header */
+
+header section { 
+    display: flex;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 2.6vw;
+    text-transform: uppercase;
+    margin-right: 0.4em;
+}
+
+/* Kleine tekst naast het logo */
+
+header p {
+    width: 9em;
+    font-weight: 400;
+    font-size: 1vw;
+    line-height: 1.3em;
+    text-transform: uppercase;
+}
+
+/* Navigatiestijlen in de header */
+
+header nav ul {
+    display: flex;
+    align-items: center;
+}
+
+header nav li {
+    list-style: none;
+    margin-left: 4em;
+    font-weight: 400;
+}
+
+/* Specifieke stijlen voor het laatste navigatie-item */
+
+header nav ul li:last-child {
+    background-color: transparent;
+    border: 0.2em dashed #F9F9F9;
+    padding: 1em 3em;
+    border-radius: 5em;
+
+    transition: all 500ms ease;
+}
+
+/* Links in de navigatie */
+
+header nav a {
+    color: white;
+    text-decoration: none;
+
+    transition: all 400ms ease;
+}
+
+header nav a:hover {
+    font-weight: 600;
+}
+
+/* Footer sectie */
+
+footer {
+    background-color: #A70118;
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    padding: 6em 2em 0 2em;
+    height: fit-content;
+}
+
+.footerContent {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    align-content: start;
+    width: 100%;
+
+    padding-bottom: 2em;
+}
+
+/* Navigatie binnen de footer */
+
+footer nav {
+    display: flex;
+    flex-flow: column;
+    width: 50%;
+}
+
+footer h2 {
+    font-weight: 300;
+    font-size: 1.2vw;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+footer ul {
+    margin-bottom: 3em;
+    padding-left: 0;
+}
+
+footer ul li {
+    margin-bottom: 0.5em;
+}
+
+footer a {
+    color: #F9F9F9;
+    text-decoration: none;
+    font-size: 2.5vw;
+    text-transform: uppercase;
+}
+
+/* Footer nieuwsbrief sectie */
+
+.footerNewsletter {
+    display: flex;
+    flex-flow: column;
+    width: 50vw;
+}
+.footerNewsletter h2 {
+    font-size: 4vw;
+    font-weight: 800;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+.footerNewsletter h3 {
+    font-size: 1em;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* Inputvelden voor nieuwsbrief */
+
+.footerNewsletter input {
+    font-size: 1em;
+    color: #F9F9F9;
+    font-weight: 400;
+
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.2em solid #F9F9F9;
+    outline: none;
+    padding-right: 30%;
+    text-align: start;
+}
+
+.footerNewsletter button {
+    color: #F9F9F9;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    background-color: transparent;
+    border: none;
+    transition: all 800ms ease-in-out;
+}
+
+.form-box button:hover {
+    text-decoration: underline;
+}
+
+.footerBottom {
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+    padding-bottom: 2em ;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+.footerBottom ul {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+}
+
+.footerBottom li {
+    margin: 0;
+}
+
+.footerBottom a {
+    font-size: 1em;
+    margin-left: 3em;
+    text-decoration: underline;
+    text-transform: none;
+}
+
+/* Vormgeving achtergrond kleurklassen */
+
+.bg-red {
+    background-color: #A70118;
+}
+
+.bg-black {
+    background-color: #040404;
+}
+
+/* Algemene stijlen voor headings */
+
+h2 {
+    font-size: 6vw;
+    font-weight: 800;
+    font-style: normal;
+    line-height: 1em;
+    text-transform: uppercase;
+}    
+
+/* Algemene stijlen voor paragrafen */
+
+p {
+    font-size: 1.1em;
+    line-height: 1.5em;
+    font-weight: 400;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    transition: all 500ms ease;
+}
+
+/* Homepagina hero sectie */
+
+.homeHero {
+    background-color: #040404;
+
+    display: flex;
+    align-items: flex-end;
+
+    background-image: url(../images/hero_achtergrond_afbeelding.png);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 100vw;
+
+    height: 92vh;
+    padding-bottom: 10em;
+    margin: 0;
+}
+
+.homeHero h2 {
+    width: fit-content;
+    margin: 0 0 1em 1em;
+    font-size: 4vw;
+    width: 60vw;
+    line-height: 1em;
+    text-transform: uppercase;
+}
+
+.homeRecentEpisodes {
+    background-color: #040404;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-flow: column;
+    height: 100vh;
+    margin: 0;
+}
+
+.homeRecentEpisodes h2 {
+    font-size: 1.5vw;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin-left: 3em;
+    margin-bottom: 1em;
+    padding: 0;
+}
+
+.homeRecentEpisodes > ul {
+    display: flex;
+    flex-flow: column;
+    width: 100%;
+
+    margin: 0;
+    padding-left: 0;
+}
+
+/* Aflevering slides */
+/* Tutorial gevolgd van: https://codepen.io/Chen0682/pen/Rveoom */
+
+.slide {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    background-color: #040404;
+    color: #F9F9F9;
+    border: none;
+    border-bottom: #fff solid 0.1rem;
+    padding: 0.5em 0 0.5em 1em;
+
+    text-align: start;
+    text-decoration: none;
+    font-size: 4vw;
+    text-transform: uppercase;
+  }
+  
+.homeRecentEpisodes a {
+    text-align: start;
+    font-size: 4vw;
+    text-transform: uppercase;
+    
+    position: relative;
+}
+
+/* episode interaction */
+  
+.slide::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 130%;
+    height: 100%;
+    background-color: #A70118;
+    transform: translate(-110%);
+    transition: 1s ease;
+  }
+  
+.slide:hover::before {
+    transform: translate(-5%, 0);
+  }
+
+.btnOverviewEpisodes {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 4em;
+}
+
+.btnOverviewEpisodes a {
+
+    padding: 1em 4em;
+    border: #F9F9F9 dashed 0.2em;
+    border-radius: 2em;
+
+    font-size: 1vw;
+    text-align: center;
+    text-transform: uppercase;
+
+    transition: all 500ms ease;
+}
+ 
+.btnOverviewEpisodes a:hover {
+    background-color: #A70118;
+}
+
+.homeTeaserVideo {
+    background-color: #040404;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+
+    padding: 4em 0;
+}
+
+.homeTeaserVideo iframe { /* Foutmelding: experimental technology */
+    border-radius: 10em;
+    scale: 1;
+    width: 100%;
+    height: 100%;
+    border: none;
+    
+    animation: appear 20s ease-in-out;
+    animation-timeline: view();
+    animation-range: entry 0 cover 40%;
+}
+
+@keyframes appear {
+    0% {
+        scale: 0.5;
+        border-radius: 100em;
+    }
+    100% {
+        scale: 1;
+        border-radius: 10em;
+    }
+}
+
+.homeAbout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 0 2em 0 2em;
+    margin: 0;
+
+    height: 100vh;
+
+    border-bottom-right-radius: 5em;
+    border-bottom-left-radius: 5em;
+
+    background-color: #040404;
+    overflow: hidden;
+
+    background-image: url("../images/man_afbeelding.png");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 90vw; 
+}
+
+.homeAbout h2 { 
+    font-size: 7em;
+    width: 80vw;
+    margin: 0;
+}
+
+.homeAbout p {
+    width: 55vw;
+    margin: 3em 0;
+}
+
+.homeAbout a {
+    width: 20vw;
+    padding: 1em;
+
+    background-color: #040404;
+
+    border: #F9F9F9 dashed 0.2em;
+    border-radius: 2em;
+
+    font-size: 1vw;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 500ms ease;
+}
+
+.homeAbout a:hover { /* cta-button interaction */
+    background-color: #A70118;
+}
+
+.homeComments {
+    background-color: #A70118;
+    display: flex;
+    flex-flow: column;
+
+    border-bottom-right-radius: 5%;
+    border-bottom-left-radius: 5%;
+
+    background-image: url("../images/commentaar_achtergrond_afbeelding.png");
+    background-position: top right;
+    background-size: 70vw;
+    background-repeat: no-repeat;
+    padding: 4em 4em;
+}
+
+.homeComments div {
+    width: fit-content;
+}
+
+.homeComments div:first-of-type {
+    width: fit-content;
+    margin: 0;
+}
+
+.homeComments div:nth-last-of-type(2) {
+    display: flex;    
+    justify-content: flex-end;
+    align-self: flex-end;
+    width: 120%;
+    margin-top: 0;
+}
+
+.homeComments div:nth-last-of-type(2) img {
+    width: 30%;
+    margin-right: 1em;
+}
+
+.homeComments div:last-of-type {
+    display: flex;    
+    width: 100%;
+}
+
+.homeComments div:last-of-type img {
+    width: 50%;
+    margin-left: 2em;
+}
+
+.homeComments h2 { 
+    width: 80vw;
+    height: auto;
+
+    margin: 0;
+}
+
+.homeComments p {
+    width: 70vw;
+    margin: 3em 0;
+}
+
+.homeComments a {
+    width: 20vw;
+    padding: 1em 4em;
+
+    background-color: #A70118;
+
+    border: #F9F9F9 dashed 0.2em;
+    border-radius: 2em;
+
+    font-size: 1vw;
+    text-align: center;
+    text-transform: uppercase;
+    transition: all 500ms ease;
+}
+
+.homeComments a:hover {
+    background-color: #B3011E;
+}
+
+.homeNewsletter {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 0 2em 0 2em;
+    margin: 0;
+
+    height: 100vh;
+
+    background-color: #040404;
+    overflow: hidden;
+
+    background-image: url("../images/vrouw_afbeelding.png");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-size: 90vw;
+}
+
+.homeNewsletter h2 {
+    width: 75vw;
+    margin: 0;
+
+    font-size: 4.5vw;
+}
+
+.homeNewsletter p {
+    width: 60vw;
+    margin: 3em 0;
+}
+
+.homeNewsletter a {
+    width: 20vw;
+    padding: 1em;
+
+    background-color: #040404;
+    border: #F9F9F9 dashed 0.2em;
+    border-radius: 2em;
+
+    font-size: 1vw;
+    text-align: center;
+    text-transform: uppercase;
+
+    transition: all 500ms ease;
+}
+
+.homeNewsletter a:hover {
+    background-color: #A70118;
+}
+
+/* Over ons pagina sectie */
+
+.aboutHero {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    background-image: url(../images/hero_over-ons_afbeelding.png); /* kwaliteit */
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 95vw;
+
+    height: 100vh;
+    padding: 4.5em;
+}
+
+.aboutHero p {
+    width: 25vw;
+}
+
+.aboutUs {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 1em 4em;
+}
+
+.aboutUs section {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    width: 50%;
+    order: 1;
+    margin: 0;
+}
+
+.aboutUs h2 {
+    font-size: 7vw;
+    margin: 0;
+}
+
+.aboutUs p {
+    margin-left: 5em;
+    margin-top: 2em;
+
+    text-align: justify;
+}
+
+.aboutUs div {
+    width: 50%;
+    height: fit-content;
+}
+
+.aboutUs img {
+    width: 100%;
+}
+
+.aboutCase {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    margin: 0;
+
+    background-color: #A70118;
+    background-image: url(../images/computer.png);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-blend-mode: screen;
+
+    border-bottom-right-radius: 5em;
+    border-bottom-left-radius: 5em;
+}
+
+.aboutCase h2 {
+    width: 75vw;
+    margin: 0;
+
+    font-size: 7vw;
+}
+
+.aboutCase p {
+    margin-left: 20em;
+    margin-top: 2em;
+    width: 50vw;
+
+    text-align: justify;
+}
+
+/* Overzichts pagina sectie */
+
+.overviewPodcast {
+    background-color: #A70118;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row;
+
+    height: 75vh;
+    padding: 1em 5em;
+
+    border-bottom-right-radius: 5em;
+    border-bottom-left-radius: 5em;
+}
+
+.overviewPodcast section {
+    width: 50%;
+}
+
+.overviewPodcast img {
+    width: 35vw;
+}
+
+.overviewPodcast h2 {
+    margin: 0;
+    width: 50%;
+
+    font-size: 9.5vw;
+}
+
+.overviewPodcast p {
+    width: 100%;
+    margin-bottom: 3em;
+}
+
+.overviewPodcast a {
+    text-decoration: underline;
+    font-size: 4vw;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+/* Afleveringen Archief */
+
+.overviewEpisodes {
+    background-color: #040404;
+
+    display: flex;
+    justify-content: center;
+    padding: 5em 2em;
+}
+
+.overviewEpisodes > div {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    height: fit-content;
+}
+
+.episode {
+    height: fit-content;
+    width: 20%;
+    margin: 2em 2em 3em 2em;
+}
+
+.episode img {
+    width: 100%;
+}
+
+.episode h2 {
+    font-weight: 600;
+    font-size: 1vw;
+
+    margin: 0.5em 0;
+}
+
+.episode h3 {
+    font-weight: 500;
+    font-size: 1.7vw;
+    text-transform: uppercase;
+    margin: 0 0 1.5em 0;
+}
+
+.episode a {
+    padding: 1em 2em;
+
+    border: #F9F9F9 dashed 0.2em;
+    border-radius: 2em;
+
+    font-size: 1vw;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+
+    transition: all 500ms ease;
+}
+
+.episode a:hover {
+    background-color: #A70118;
+    font-weight: 500;
+}
